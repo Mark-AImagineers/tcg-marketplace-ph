@@ -92,6 +92,47 @@ This project isn’t overly strict — but I do follow some basic principles to 
 - Isolate logic where possible. Avoid mixing business logic with routes or models.
 - If a function/module feels like it's doing too much, break it out into a helper or utility.
 
+### 📁 Folder Structure
+
+This project follows a modular monorepo structure.  
+Services are separated by responsibility under the `services/` directory.
+
+> This section will evolve as the project grows. Feel free to suggest improvements or ask questions if anything’s unclear!
+
+pokemon-tcg-market-ph/
+├── services/
+│   ├── api/                           # Main FastAPI backend (auth, catalogue, listings)
+│   │   └── app/
+│   ├── frontend/                      # React frontend
+│   │   └── src/
+│   ├── ocr_scanner/                   # Webcam OCR service
+│   │   └── src/
+│   ├── price_checker/                # Crawls external card pricing (TCGPlayer, eBay)
+│   │   └── src/
+│   ├── trust_layer/                  # Escrow, verification, deposits
+│   │   └── src/
+│   ├── portfolio_analytics/          # Portfolio valuation, alerts, trends
+│   │   └── src/
+│   └── shared/                       # Shared utils, constants, reusable modules
+│       ├── db/
+│       ├── utils/
+│       └── constants/
+├── infra/                             # Infrastructure (docker-compose, nginx, etc.)
+│   └── docker-compose.yml
+├── tests/                             # All test suites by service
+│   ├── api/
+│   ├── ocr_scanner/
+│   ├── price_checker/
+│   ├── frontend/
+│   ├── trust_layer/
+│   └── shared/
+├── .github/                           # CI/CD workflows
+│   └── workflows/
+├── .env.example
+├── README.md
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+
 ### 🧼 Formatting & Linting
 
 - Python: Use **Black** for auto-formatting.
