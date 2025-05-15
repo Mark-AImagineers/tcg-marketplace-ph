@@ -57,19 +57,19 @@ This project is being built in public — if you have suggestions, feature ideas
 **Goal:** Establish a clean, modular local development environment — with FastAPI as the core service, PostgreSQL as the database, and working user authentication (JWT-based). This phase sets the groundwork for building real features. Everything in this phase is about setting rails: once these are in place, the rest of the platform (card catalogue, OCR, listings) can be built modularly, securely, and with confidence in our architecture.
 
 ### ✅ Infrastructure & Environment
-- [x] GitHub repo with initial README and public roadmap
-- [x] `docker-compose.yml` in `/infra/` to manage local dev containers
-- [x] `.env.dev` config for environment variables (excluded from Git)
-- [x] Base PostgreSQL service (local volume + container)
+- ✔️ GitHub repo with initial README and public roadmap
+- ✔️ `docker-compose.yml` in `/infra/` to manage local dev containers
+- ✔️ `.env.dev` config for environment variables (excluded from Git)
+- ✔️ Base PostgreSQL service (local volume + container)
 
 ### 🧱 API Bootstrapping (FastAPI)
-- [x] Project structure scaffolded under `services/api/app/`
-- [x] Application factory pattern and module layout
-- [x] Connection to PostgreSQL via async SQLAlchemy (or preferred ORM)
-- [x] Alembic for migrations
+- ✔️ Project structure scaffolded under `services/api/app/`
+- ✔️ Application factory pattern and module layout
+- ✔️ Connection to PostgreSQL via async SQLAlchemy (or preferred ORM)
+- ✔️ Alembic for migrations
 
 ### 🔐 User Authentication
-- [x] `/register` endpoint (new user signup)
+- ✔️ `/register` endpoint (new user signup)
 - [ ] JWT-based auth system (access + refresh token support)
 - [ ] `/login` endpoint (token generation)
 - [ ] Password hashing and validation
@@ -247,22 +247,6 @@ Contributions are super welcome — this project is being built in public, and I
 
 A `CONTRIBUTING.md` file with coding standards and PR tips will be added soon.
 
-### 💬 Community & Contact
-
-Feel free to reach out or follow the journey:
-
-- 🗨️ **Discord**: `chizz902#9538`
-- 👾 **Reddit**: [`u/chiz902`](https://www.reddit.com/user/chiz902/)
-- ✉️ **Work Email**: `hello@aimagineers.io`
-
-## 📄 License
-
-This project is open source under the **MIT License** — feel free to fork, use, remix, or build on top of it.
-
-If you end up using this in your own work (or business), I’d love to hear about it!
-
----
-
 ## 🌱 Community
 
 This is a build-in-public project — you can follow progress, give feedback, or just lurk:
@@ -271,6 +255,12 @@ This is a build-in-public project — you can follow progress, give feedback, or
 - 🐣 Say hi on Discord: `chizz902#9538`
 - 💬 Reddit thread coming soon under [`u/chiz902`](https://www.reddit.com/user/chiz902/)
 - 💌 Email: `markb@aimagineers.io`
+
+## 📄 License
+
+This project is open source under the **MIT License** — feel free to fork, use, remix, or build on top of it.
+
+If you end up using this in your own work (or business), I’d love to hear about it!
 
 ---
 
