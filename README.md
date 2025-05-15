@@ -52,19 +52,33 @@ I'm building this project layer by layer — not feature-hopping, just stacking 
 This project is being built in public — if you have suggestions, feature ideas, or just want to jam, feel free to open an issue or reach out. Contributions, comments, and crazy ideas are all welcome!
 ---
 
-### 🔹 Phase 0 – Setup & Foundation
+## 🔹 Phase 0 – Local Dev Foundation: API, Auth, and DB
 
-**Goal:** Stable local dev environment with core API, DB, and auth
+**Goal:** Establish a clean, modular local development environment — with FastAPI as the core service, PostgreSQL as the database, and working user authentication (JWT-based). This phase sets the groundwork for building real features. Everything in this phase is about setting rails: once these are in place, the rest of the platform (card catalogue, OCR, listings) can be built modularly, securely, and with confidence in our architecture.
 
-- [x] GitHub repo + README
-- [ ] Docker Compose setup (API, DB, OCR placeholder)
-- [ ] FastAPI project scaffold
-- [ ] PostgreSQL connection
-- [ ] `.env` setup for config
-- [ ] User auth (JWT-based)
-- [ ] Card + Catalogue models
-- [ ] Seed card data from external API scrape
-- [ ] Basic tests and error handling
+### ✅ Infrastructure & Environment
+- [x] GitHub repo with initial README and public roadmap
+- [x] `docker-compose.yml` in `/infra/` to manage local dev containers
+- [x] `.env.dev` config for environment variables (excluded from Git)
+- [x] Base PostgreSQL service (local volume + container)
+
+### 🧱 API Bootstrapping (FastAPI)
+- [x] Project structure scaffolded under `services/api/app/`
+- [x] Application factory pattern and module layout
+- [x] Connection to PostgreSQL via async SQLAlchemy (or preferred ORM)
+- [x] Alembic for migrations
+
+### 🔐 User Authentication
+- [x] `/register` endpoint (new user signup)
+- [ ] JWT-based auth system (access + refresh token support)
+- [ ] `/login` endpoint (token generation)
+- [ ] Password hashing and validation
+- [ ] Reusable `User` model and DB schema
+
+### 🧪 Testing & Validation
+- [ ] Basic unit tests for auth flow (register/login)
+- [ ] Error handling and input validation (via Pydantic)
+- [ ] Local interactive docs via Swagger/OpenAPI (`/docs`)
 
 ---
 
