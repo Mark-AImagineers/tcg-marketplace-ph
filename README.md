@@ -85,6 +85,38 @@ This project is being built in public — if you have suggestions, feature ideas
 ### 💻 Web User Interface
 - [ ] basic interface for login, register and home (web only, via react)
 
+## 🔹 Phase 0.5 – Cards Database Manager
+A local-first card catalogue builder and visual editor. Will serve as the source-of-truth for all known cards in the system, with later sync to the online cards_db powering the public catalogue.
+
+#### 🔨 Setup & Architecture
+- [ ] database engine (PostgreSQL)
+- [ ] Design local schema for `cards`, `sets`, `images`, `sources`, etc.
+- [ ] Set up local database (init + seed)
+- [ ] Define sync format (JSON, SQL, or API-based)
+
+#### 👁️ Visual Editing & CRUD
+- [ ] Choose a visual tool (have not decided yet)
+- [ ] Build UI for card search, filter, edit, and add
+- [ ] Enable backup/export functionality (e.g., local file dump)
+- [ ] Add image preview for visual validation
+
+#### 📥 Ingestion Tools
+- [ ] Script importer for Kaggle CSV
+- [ ] Build enrichment tool using TCG API or custom logic
+- [ ] Add manual card creation via UI
+- [ ] Integrate with webcam scanner / auto-cataloguer
+
+#### ☁️ Publish / Sync Online
+- [ ] Build sync script (push updated cards to online DB/API)
+- [ ] Version control or changelog system for what changed
+- [ ] Test full sync from local to online environment
+- [ ] Document publishing workflow
+
+#### 🧪 Maintenance & Iteration
+- [ ] Add custom PH-specific fields (pricing tiers, condition tags)
+- [ ] Create tools to deduplicate / merge card variants
+- [ ] Build update checker (e.g., for new API releases or scanned entries)
+
 ---
 
 ### 🔹 Phase 1 – Catalogue MVP
