@@ -74,8 +74,8 @@ This project is being built in public — if you have suggestions, feature ideas
 - ✔️ `/login` endpoint (token generation)
 - ✔️ Password hashing and validation
 - ✔️ Reusable `User` model and DB schema
-- [ ] `/refresh` endpoint
-- [ ] `/me` endpoint
+- ✔️ `/refresh` endpoint
+- ✔️ `/me` endpoint
 
 ### 🧪 Testing & Validation
 - [ ] Basic unit tests for auth flow (register/login)

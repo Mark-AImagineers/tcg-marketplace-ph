@@ -4,6 +4,26 @@ This changelog tracks the progress of Pokémon TCG Market PH — built in public
 
 ---
 
+
+## [0.1.2] - 2025-05-16
+
+### ✨ Added
+- `/login` endpoint implemented using `OAuth2PasswordRequestForm`
+- Issued JWT access and refresh tokens via `create_access_token()` and `create_refresh_token()`
+- `/refresh` endpoint added to issue new access tokens using valid refresh tokens
+- `/me` endpoint added to return authenticated user using `get_current_user()` dependency
+- Included token decoding logic with `decode_token()` for access/refresh flows
+
+### 🛠 Changed
+- Updated `utils.py` with all JWT helpers: token creation, decoding, hashing
+- Centralized JWT config via `.env` for both token durations and secrets
+- Cleaned up Postman testing flow for all auth endpoints
+
+### 📄 Docs
+- Created markdown documentation for `/register`, `/login`, `/refresh`, `/me` under `/api/users`
+- Updated beginner-friendly Alembic migration guide
+
+---
 ## [0.1.1] - 2025-05-16
 
 ### ✨ Added
