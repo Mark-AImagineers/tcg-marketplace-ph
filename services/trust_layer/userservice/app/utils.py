@@ -1,9 +1,12 @@
 import json
 import hashlib
+import jwt
 from pathlib import Path
 from cryptography.fernet import Fernet
 from app.config import settings
 from passlib.context import CryptContext
+from datetime import datetime, timedelta
+
 
 fernet = Fernet(settings.ENCRYPTION_SECRET.encode())
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -42,3 +45,15 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 def hash_email(email: str) -> str:
     return hashlib.sha256(email.lower().strip().encode()).hexdigest()
+
+def create_access_token(data: dict, expires_delta: int=None) -> str:
+    to_encode = data.copy()
+    expire = datetime.utcnow() + timedelta(minutes=expires_delta or settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
+
+def create_refresh_token(data: dict, expires_days: int=7) -> str:
+    to_encode = data.copy()
+    expire = datetime.utcnow() + timedelta(days=expires_days)
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM)

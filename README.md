@@ -254,7 +254,7 @@ This is a build-in-public project — you can follow progress, give feedback, or
 - 📓 See progress in [`CHANGELOG.md`](./CHANGELOG.md)
 - 🐣 Say hi on Discord: `chizz902#9538`
 - 💬 Reddit thread coming soon under [`u/chiz902`](https://www.reddit.com/user/chiz902/)
-- 💌 Email: `markb@aimagineers.io`
+- 💌 Email: `hello@aimagineers.io`
 
 ## 📄 License
 

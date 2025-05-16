@@ -5,7 +5,9 @@ from sqlalchemy.future import select
 from app.schemas.user import RegisterRequest, UserResponse
 from app.models.user import User
 from app.db import get_db
-from app.utils import hash_password, hash_email
+from app.utils import hash_password, hash_email, verify_password, create_access_token, create_refresh_token
+from fastapi.security import OAuth2PasswordRequestForm
+from fastapi import Form
 
 router = APIRouter()
 
@@ -27,3 +29,28 @@ async def register_user(payload: RegisterRequest, db: AsyncSession = Depends(get
 
     return user
 
+
+### POST:/login ###
+@router.post("/login")
+async def login_user(
+    form_data: OAuth2PasswordRequestForm = Depends(), db: AsyncSession= Depends(get_db)
+):
+    result = await db.execute(
+        select(User).where(User.email_hash == hash_email(form_data.username))
+    )
+    user = result.scalars().first()
+
+    if not user:
+        raise HTTPException(status_code=400, detail="Invalid credentials")
+    
+    if not verify_password(form_data.password, user.hashed_password):
+        raise HTTPException(status_code=400, detail="Invalid credentials")
+    
+    access_token = create_access_token(data={"sub": user.email})
+    refresh_token = create_refresh_token(data={"sub": user.email})
+
+    return {
+        "access_token": access_token,
+        "refresh_token": refresh_token,
+        "token_type": "bearer"
+    }
