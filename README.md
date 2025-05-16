@@ -70,15 +70,20 @@ This project is being built in public — if you have suggestions, feature ideas
 
 ### 🔐 User Authentication
 - ✔️ `/register` endpoint (new user signup)
-- [ ] JWT-based auth system (access + refresh token support)
-- [ ] `/login` endpoint (token generation)
-- [ ] Password hashing and validation
-- [ ] Reusable `User` model and DB schema
+- ✔️ JWT-based auth system (access + refresh token support)
+- ✔️ `/login` endpoint (token generation)
+- ✔️ Password hashing and validation
+- ✔️ Reusable `User` model and DB schema
+- [ ] `/refresh` endpoint
+- [ ] `/me` endpoint
 
 ### 🧪 Testing & Validation
 - [ ] Basic unit tests for auth flow (register/login)
 - [ ] Error handling and input validation (via Pydantic)
 - [ ] Local interactive docs via Swagger/OpenAPI (`/docs`)
+
+### 💻 Web User Interface
+- [ ] basic interface for login, register and home (web only, via react)
 
 ---
 
