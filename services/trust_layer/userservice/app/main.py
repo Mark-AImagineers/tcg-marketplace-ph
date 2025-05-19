@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pathlib import Path
 from .utils import load_metadata
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.users.routes import router as user_router
 
@@ -31,5 +32,13 @@ async def root():
 @app.get("/status")
 async def status():
     return metadata
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"], #this is for local test only
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(user_router, prefix="/api/users")
