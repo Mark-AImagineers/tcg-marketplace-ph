@@ -1,7 +1,7 @@
 {
   "service": "userservice",
   "title": "TCG Market User Service",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Handles user registration, login, and identity verification.",
   "status": "alpha"
 }

@@ -5,6 +5,26 @@ This changelog tracks the progress of Pokémon TCG Market PH — built in public
 ---
 
 
+## [0.1.3] - 2025-05-19
+
+### ✨ Added
+- Frontend scaffolded using Vite + React under `services/frontend/web`
+- Added `AuthContext` with `AuthProvider` for managing global user state
+- Created `Login.jsx` with controlled inputs for `email` and `password`
+- Implemented `axios` client under `src/api/client.js` with `withCredentials: true`
+- Integrated working login form that sends `application/x-www-form-urlencoded` POST to FastAPI `/api/users/login`
+- Connected frontend to backend via Docker with proper volume mount and dev server on port 5173
+
+### 🛠 Changed
+- Modified `infra/docker-compose.yml` to include new `frontend-web` service using `node:20` with hot-reloading
+- Configured FastAPI backend with `CORSMiddleware` to allow requests from `http://localhost:5173`
+
+### 🧪 Verified
+- Successful end-to-end login: frontend form -> backend JWT response
+- Verified CORS, form handling, state setting, and Docker hot reload across services
+
+---
+
 ## [0.1.2] - 2025-05-16
 
 ### ✨ Added

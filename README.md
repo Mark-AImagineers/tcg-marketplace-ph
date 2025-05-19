@@ -83,7 +83,10 @@ This project is being built in public — if you have suggestions, feature ideas
 - [ ] Local interactive docs via Swagger/OpenAPI (`/docs`)
 
 ### 💻 Web User Interface
-- [ ] basic interface for login, register and home (web only, via react)
+- ✔️ React frontend scaffolded using Vite
+- ✔️ Dockerized frontend service with live reload
+- ✔️ Basic login form connected to backend
+- [ ] Register form and session persistence (in progress)
 
 ## 🔹 Phase 0.5 – Cards Database Manager
 A local-first card catalogue builder and visual editor. Will serve as the source-of-truth for all known cards in the system, with later sync to the online cards_db powering the public catalogue.
