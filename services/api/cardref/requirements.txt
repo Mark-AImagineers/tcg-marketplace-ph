@@ -3,3 +3,4 @@ uvicorn
 sqlalchemy
 pydantic-settings
 psycopg2-binary
+typer[all]
