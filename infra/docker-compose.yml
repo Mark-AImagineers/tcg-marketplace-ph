@@ -26,6 +26,22 @@ services:
     volumes:
       - ../services/trust_layer/userservice/app:/app/app
   
+  cardref:
+    build:
+      context: ../services/api/cardref
+    container_name: tcgmarket-cardref
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    depends_on:
+      - db
+    env_file:
+      - ../infra/.env
+    volumes:
+      - ../services/api/cardref:/app
+      - ../infra/.env:/app/.env
+
+
   frontend-web:
     image: node:20
     container_name: tcgmarket-frontend-web
