@@ -39,10 +39,10 @@ I'm building this **in public** — with real commits, real transparency, and a 
 
 ### Optional Features and Ideas
 - Deck Builder
+- Deck Builder 
 - Deck Build Sell/Trade
 - Support for Local TCG shops (setup online shop profiles)
-- AI trading chatbot
-- AI pokemon guru chatbot
+- AI pokemon guru chatbot (ML awareness on cards, strategies, deck, price predictions)
 
 ## 🏗️ Development Phases
 
@@ -92,21 +92,23 @@ This project is being built in public — if you have suggestions, feature ideas
 A local-first card catalogue builder and visual editor. Will serve as the source-of-truth for all known cards in the system, with later sync to the online cards_db powering the public catalogue.
 
 #### 🔨 Setup & Architecture
-- [ ] database engine (PostgreSQL)
-- [ ] Design local schema for `cards`, `sets`, `images`, `sources`, etc.
-- [ ] Set up local database (init + seed)
-- [ ] Define sync format (JSON, SQL, or API-based)
+- ✔️ database engine (PostgreSQL)
+- ✔️Design local schema for `cards`, `sets`, `images`, `sources`, etc.
+- ✔️ Set up local database (init + seed)
 
 #### 👁️ Visual Editing & CRUD
+- ✔️ Enable CLI commands for API endpoints
 - [ ] Choose a visual tool (have not decided yet)
 - [ ] Build UI for card search, filter, edit, and add
 - [ ] Enable backup/export functionality (e.g., local file dump)
 - [ ] Add image preview for visual validation
 
 #### 📥 Ingestion Tools
-- [ ] Script importer for Kaggle CSV
-- [ ] Build enrichment tool using TCG API or custom logic
-- [ ] Add manual card creation via UI
+- ✔️ Script importer for seeder CSV
+- ✔️ Get missing cards from PokemonTCG.io API
+- ✔️ Pull missing cards details and save on DB
+- [ ] Add manual card creation via UI or CLI
+- [ ] Add manual card edit via UI or CLI
 - [ ] Integrate with webcam scanner / auto-cataloguer
 
 #### ☁️ Publish / Sync Online
