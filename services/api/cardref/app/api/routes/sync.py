@@ -4,6 +4,7 @@ import json
 
 from app.sync.checker import get_missing_card_ids
 from app.sync.puller import pull_cards_from_ids
+from app.sync.dump import dump_all_cards_to_csv
 
 router = APIRouter(prefix="/sync", tags=["sync"])
 
@@ -50,4 +51,16 @@ def pull_missing_cards(api_key: str = Query(..., description="PokéTCG.io API ke
         "fetched_count": len(results),
         "message": f"🟢 Pulled {len(results)} cards successfully",
         "sample": results[:3]
+    }
+
+@router.get("/dump")
+def dump_card_data():
+    try:
+        dump_all_cards_to_csv()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Dump failed: {str(e)}")
+
+    return {
+        "message": "✅ Card data dumped to CSV successfully.",
+        "filename": "all_cards_dump.csv"
     }

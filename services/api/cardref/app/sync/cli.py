@@ -2,9 +2,10 @@ import typer
 from typing_extensions import Annotated
 from app.sync.checker import get_missing_card_ids
 from app.sync.puller import pull_cards_by_ids
+from app.sync.dump import dump_all_cards_to_csv
 
 def main(
-    command: Annotated[str, typer.Argument(help="Commands: check, pull, status")],
+    command: Annotated[str, typer.Argument(help="Commands: check, pull, dump")],
     api_key: Annotated[str, typer.Option(help="PokéTCG.io API key")] = ""
 ):
     # ========== CHECK ==========
@@ -49,9 +50,10 @@ def main(
         else:
             typer.secho("ℹ No cards pulled — either all were already in DB or none to pull.", fg=typer.colors.YELLOW)
 
-    # ========== STATUS ==========
-    elif command == "status":
-        typer.echo("ℹ Sync status check (not implemented yet)")
+    # ========== DUMP ==========
+    elif command == "dump":
+        typer.echo("📤 Dumping all cards to CSV...")
+        dump_all_cards_to_csv()
 
     else:
         typer.secho("❌ Unknown command. Try: check | pull | status", fg=typer.colors.RED)
