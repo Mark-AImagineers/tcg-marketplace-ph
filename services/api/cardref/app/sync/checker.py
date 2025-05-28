@@ -1,7 +1,11 @@
 import requests
+import os
+import json
 from sqlalchemy.orm import Session
 from app.db import SessionLocal
 from app.models.cards import Card
+
+DATA_PATH = "../data/missing_ids.json"
 
 def get_poketcg_card_ids(api_key: str) -> set[str]:
     url = "https://api.pokemontcg.io/v2/cards"
@@ -36,5 +40,13 @@ def get_local_card_ids() -> set[str]:
 def get_missing_card_ids(api_key: str) -> set[str]:
     remote_ids = get_poketcg_card_ids(api_key)
     local_ids = get_local_card_ids()
-    return remote_ids - local_ids
+    missing = remote_ids - local_ids
+
+    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
+    with open(DATA_PATH, "w", encoding="utf-8") as f:
+        json.dump(sorted(list(missing)), f, indent=2)
+    
+    print(f"Saved {len(missing)} missing IDs to {DATA_PATH}")
+    return missing
+    
 

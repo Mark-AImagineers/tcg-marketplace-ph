@@ -23,11 +23,17 @@ def main(
         else:
             typer.echo(f"🟢 Your local card DB is fully up to date!", fg=typer.colors.GREEN)
 
-        
+    ### PULL ###
     elif command == "pull":
-        typer.echo("Running data puller")
-        # from .puller import run_puller
-        # run_puller()
+        from app.sync.puller import pull_cards_by_ids
+
+        if not api_key:
+            typer.secho("❌ Missing API key. Use --api-key=...", fg=typer.colors.RED)
+            raise typer.Exit(code=1)
+
+        typer.echo("🚀 Running data puller")
+        pull_cards_by_ids(api_key)
+        typer.secho("✅ Done pulling cards (within safe rate limits)", fg=typer.colors.GREEN)
 
     elif command == "status":
         typer.echo("ℹSync status check (not implemented yet)")
