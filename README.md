@@ -93,11 +93,12 @@ A local-first card catalogue builder and visual editor. Will serve as the source
 
 #### 🔨 Setup & Architecture
 - ✔️ database engine (PostgreSQL)
-- ✔️Design local schema for `cards`, `sets`, `images`, `sources`, etc.
+- ✔️ Design local schema for `cards`, `sets`, `images`, `sources`, etc.
 - ✔️ Set up local database (init + seed)
 
 #### 👁️ Visual Editing & CRUD
 - ✔️ Enable CLI commands for API endpoints
+- [ ] Add security on all endpoints
 - [ ] Choose a visual tool (have not decided yet)
 - [ ] Build UI for card search, filter, edit, and add
 - [ ] Enable backup/export functionality (e.g., local file dump)
@@ -107,6 +108,7 @@ A local-first card catalogue builder and visual editor. Will serve as the source
 - ✔️ Script importer for seeder CSV
 - ✔️ Get missing cards from PokemonTCG.io API
 - ✔️ Pull missing cards details and save on DB
+- ✔️ Backup DB to CSV
 - [ ] Add manual card creation via UI or CLI
 - [ ] Add manual card edit via UI or CLI
 - [ ] Integrate with webcam scanner / auto-cataloguer

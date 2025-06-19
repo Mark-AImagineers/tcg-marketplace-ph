@@ -1,0 +1,44 @@
+/* Reset default styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* Main layout container */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Panels */
+.panel {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.panel:last-child {
+  border-right: none;
+}
+
+/* Inputs */
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* SQL output */
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+}
