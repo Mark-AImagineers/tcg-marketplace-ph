@@ -1,5 +1,8 @@
 # Pokémon TCG Market PH
 
+UPDATE: I originally wanted this to be a single repo multi app project, but seems that it had added a lot of complications that is hindering me to develop further.
+Moving foward this repo will not receive any updates but I will then now create different repos for each application for the whole TCG Market Place.
+
 **Catalogue, Trade, and Sell Pokémon cards with fellow Pinoys — fast, easy, and built with trust in mind.**
 > Built in public. Made by a Filipino collector, for Filipino collectors.
 
