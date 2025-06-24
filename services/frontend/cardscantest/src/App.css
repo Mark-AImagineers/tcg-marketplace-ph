@@ -6,6 +6,14 @@ body, html, #root {
   font-family: sans-serif;
 }
 
+/* Top bar */
+.top-bar {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  gap: 10px;
+}
+
 /* Main layout container */
 .layout {
   display: flex;
